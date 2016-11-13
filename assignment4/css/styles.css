@@ -1,0 +1,9 @@
+h1{
+    text-align:center;
+}
+
+#loading{
+    position:fixed;
+    top:10px;
+    left:10px; 
+}
