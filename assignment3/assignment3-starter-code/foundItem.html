@@ -1,0 +1,27 @@
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>#</th>
+        <th>SName</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Small ($)</th>
+        <th>Large ($)</th>
+        <th>Action</th>
+    </tr>
+    <tr ng-repeat="item in ctrl.foundItems">
+        <td>{{ $index + 1 }}</td>
+        <td>{{ item.short_name }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.description || 'No description' }}</td>
+        <td>
+            {{ item.small_portion_name }} ({{ item.price_large | currency : '$' : 2}})
+        </td>
+        <td>
+            {{ item.large_portion_name }} ({{ item.price_large | currency : '$' : 2}})
+        </td>
+        <td>
+            <button class="btn btn-small btn-danger"
+                ng-click="ctrl.onRemove({index : $index});">Don't want this one!</button>
+        </td>
+    </tr>
+</table>
